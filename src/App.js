@@ -22,7 +22,8 @@ const App = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-        }}
+          minHeight: "200px",
+        }} 
       >
         <h1 style={{ textAlign: "center", color: "#00B496" }}>
           TealFeed Code Editor

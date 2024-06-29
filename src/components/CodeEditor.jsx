@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Highlight, themes } from "prism-react-renderer";
+// src/components/CodeEditor.js
+import React from "react";
 import "./CodeEditor.css";
+import useSyntaxHighlighting from "../hooks/useSyntaxHighlighting";
 
 const CodeEditor = () => {
-  const [sourceCode, setSourceCode] = useState(
-    `
+  const initialCode = `
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -15,13 +15,10 @@ function App() {
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
+`;
 
-`
-  );
-
-  const handleSourceCodeChange = (event) => {
-    setSourceCode(event.target.value);
-  };
+  const { sourceCode, handleSourceCodeChange, SyntaxHighlightedCode } =
+    useSyntaxHighlighting(initialCode);
 
   return (
     <div className="code-editor">
@@ -33,25 +30,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
           e.preventDefault();
         }}
       />
-      <Highlight theme={themes.github} code={sourceCode} language="jsx">
-        {({ tokens, getLineProps, getTokenProps }) => (
-          <pre>
-            {tokens.map((lineTokens, lineIndex) => (
-              <div
-                key={lineIndex}
-                {...getLineProps({ line: lineTokens, key: lineIndex })}
-              >
-                {lineTokens.map((token, tokenIndex) => (
-                  <span
-                    key={tokenIndex}
-                    {...getTokenProps({ token, key: tokenIndex })}
-                  />
-                ))}
-              </div>
-            ))}
-          </pre>
-        )}
-      </Highlight>
+      <SyntaxHighlightedCode code={sourceCode} />
     </div>
   );
 };
