@@ -55,7 +55,7 @@ Make sure you have Node.js and npm installed. You can download them from [Node.j
 
 ### CodeEditor Component
 
-    1. Updates `sourceCode` state when typing
-    2. Prevents text selection within the editor
-    3. Applies syntax highlighting and validates highlighted tokens
+- Updates `sourceCode` state when typing
+- Prevents text selection within the editor
+- Applies syntax highlighting and validates highlighted tokens
    
