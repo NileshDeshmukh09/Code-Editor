@@ -35,7 +35,7 @@ const App = () => {
             fontSize: "14px",
           }}
         >
-          CodeEditor in React with Prism React Renderer for highlighting JSX,
+          CodeEditor in React with Textarea & Prism React Renderer for highlighting JSX,
           simplifying code editing and viewing in web apps.
           <span>
             <a
