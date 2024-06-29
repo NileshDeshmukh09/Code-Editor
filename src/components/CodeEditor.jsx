@@ -19,7 +19,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 `
   );
 
-  const handleCodeChange = (event) => {
+  const handleSourceCodeChange = (event) => {
     setSourceCode(event.target.value);
   };
 
@@ -27,19 +27,25 @@ ReactDOM.render(<App />, document.getElementById("root"));
     <div className="code-editor">
       <textarea
         value={sourceCode}
-        onChange={handleCodeChange}
+        onChange={handleSourceCodeChange}
         spellCheck="false"
         onSelect={(e) => {
-          e.preventDefault(); 
+          e.preventDefault();
         }}
       />
       <Highlight theme={themes.github} code={sourceCode} language="jsx">
         {({ tokens, getLineProps, getTokenProps }) => (
           <pre>
             {tokens.map((lineTokens, lineIndex) => (
-              <div key={lineIndex} {...getLineProps({ line: lineTokens, key: lineIndex })}>
+              <div
+                key={lineIndex}
+                {...getLineProps({ line: lineTokens, key: lineIndex })}
+              >
                 {lineTokens.map((token, tokenIndex) => (
-                  <span key={tokenIndex} {...getTokenProps({ token, key: tokenIndex })} />
+                  <span
+                    key={tokenIndex}
+                    {...getTokenProps({ token, key: tokenIndex })}
+                  />
                 ))}
               </div>
             ))}
