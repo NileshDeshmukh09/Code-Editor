@@ -1,0 +1,41 @@
+.code-editor {
+  position: relative;
+  width: 40rem; 
+  height: 20rem; 
+  font-family: "Fira Code", monospace;
+}
+
+.code-editor textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem; 
+  font-size: 1rem; 
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.5rem; 
+  outline: none;
+  resize: none;
+  background: transparent;
+  font-family: "Fira Code", monospace;
+  color: transparent;
+  caret-color: black;
+  z-index: 1;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  user-select: none;
+}
+
+.code-editor pre {
+  margin: 0;
+  padding: 0.75rem; 
+  font-size: 1rem; 
+  border: 0.0625rem solid #d4d4d4; 
+  border-radius: 0.5rem; 
+  font-family: "Fira Code", monospace;
+  background-color: #f1f1f1;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
